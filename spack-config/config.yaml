@@ -1,0 +1,4 @@
+config:
+  connect_timeout: 100
+  build_stage:
+    - $spack/../spack-build
