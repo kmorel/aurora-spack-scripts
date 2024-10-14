@@ -1,0 +1,14 @@
+compilers:
+- compiler:
+    spec: gcc@=12.2.0
+    paths:
+      cc: /opt/aurora/24.180.0/spack/unified/0.8.0/install/gcc_bootstrap/linux-sles15-x86_64/gcc-7.5.0/gcc-12.2.0-5ieouwtcwrrwan33k5itbqrsrom7cjrh/bin/gcc
+      cxx: /opt/aurora/24.180.0/spack/unified/0.8.0/install/gcc_bootstrap/linux-sles15-x86_64/gcc-7.5.0/gcc-12.2.0-5ieouwtcwrrwan33k5itbqrsrom7cjrh/bin/g++
+      f77: /opt/aurora/24.180.0/spack/unified/0.8.0/install/gcc_bootstrap/linux-sles15-x86_64/gcc-7.5.0/gcc-12.2.0-5ieouwtcwrrwan33k5itbqrsrom7cjrh/bin/gfortran
+      fc: /opt/aurora/24.180.0/spack/unified/0.8.0/install/gcc_bootstrap/linux-sles15-x86_64/gcc-7.5.0/gcc-12.2.0-5ieouwtcwrrwan33k5itbqrsrom7cjrh/bin/gfortran
+    flags: {}
+    operating_system: sles15
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
