@@ -5,6 +5,14 @@ packages:
         modules:
           - cmake/3.27.9
 
+  # Imported from /opt/aurora/24.180.0/spack/unified/0.8.0/config/spack-pe-0.8.0-2024.07.30.002_packages.yaml
+  kokkos:
+    externals:
+    - spec: kokkos@4.4.00 %oneapi@=2024.07.30.002 ~aggressive_vectorization~compiler_warnings~cuda~debug~debug_bounds_check~debug_dualview_modify_check~deprecated_code~examples~hpx~hpx_async_dispatch~hwloc~memkind~numactl+openmp~openmptarget~pic~rocm+serial+shared+sycl~tests~threads~tuning~wrapper
+        build_type=Release cxxstd=17 generator=make intel_gpu_arch=intel_pvc
+      prefix: /opt/aurora/24.180.0/spack/unified/0.8.0/install/linux-sles15-x86_64/oneapi-2024.07.30.002/kokkos-4.4.00-usx354ncdtlrwaypdqd2wlug65ugweqt
+    buildable: false
+
   ### Spack package config for Aurora SDK
   # Taken from /opt/aurora/24.180.0/spack/unified/0.8.0/config/external_packages_0.8.0.yaml
   all:
