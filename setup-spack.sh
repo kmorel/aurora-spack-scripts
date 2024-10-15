@@ -10,7 +10,7 @@ myspack_base_dir=`realpath $myspack_base_dir`
 
 unset myscript
 
-export SPACK_USER_CONFIG_PATH=$myspack_base_dir/spack-configs/e4s-configs/frontier
+export SPACK_USER_CONFIG_PATH=$myspack_base_dir/spack-config
 . $myspack_base_dir/spack/share/spack/setup-env.sh
 
 # This is necessary to prevent Python errors when loading packages containing
