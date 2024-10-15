@@ -1,5 +1,12 @@
-### Spack package config for Aurora SDK
 packages:
+  cmake:
+    externals:
+      - spec: cmake@3.27.9
+        modules:
+          - cmake/3.27.9
+
+  ### Spack package config for Aurora SDK
+  # Taken from /opt/aurora/24.180.0/spack/unified/0.8.0/config/external_packages_0.8.0.yaml
   all:
     compiler: [oneapi]
     target: [x86_64]
