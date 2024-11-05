@@ -1,27 +1,25 @@
+# Configuration imported from /opt/aurora/24.086.0/spack/oneapi/0.7.0/config/compilers_0.7.0.yaml
 compilers:
-# Configuration taken from /opt/aurora/24.180.0/spack/unified/0.8.0/config/compilers_0.8.0.yaml
 - compiler:
     spec: gcc@=12.2.0
     paths:
-      cc: /opt/aurora/24.180.0/spack/unified/0.8.0/install/gcc_bootstrap/linux-sles15-x86_64/gcc-7.5.0/gcc-12.2.0-5ieouwtcwrrwan33k5itbqrsrom7cjrh/bin/gcc
-      cxx: /opt/aurora/24.180.0/spack/unified/0.8.0/install/gcc_bootstrap/linux-sles15-x86_64/gcc-7.5.0/gcc-12.2.0-5ieouwtcwrrwan33k5itbqrsrom7cjrh/bin/g++
-      f77: /opt/aurora/24.180.0/spack/unified/0.8.0/install/gcc_bootstrap/linux-sles15-x86_64/gcc-7.5.0/gcc-12.2.0-5ieouwtcwrrwan33k5itbqrsrom7cjrh/bin/gfortran
-      fc: /opt/aurora/24.180.0/spack/unified/0.8.0/install/gcc_bootstrap/linux-sles15-x86_64/gcc-7.5.0/gcc-12.2.0-5ieouwtcwrrwan33k5itbqrsrom7cjrh/bin/gfortran
+      cc: /opt/aurora/24.086.0/spack/gcc/0.7.0/install/linux-sles15-x86_64/gcc-7.5.0/gcc-12.2.0-fxd4zwa64mfswv34rol52zamj7c6r3cz/bin/gcc
+      cxx: /opt/aurora/24.086.0/spack/gcc/0.7.0/install/linux-sles15-x86_64/gcc-7.5.0/gcc-12.2.0-fxd4zwa64mfswv34rol52zamj7c6r3cz/bin/g++
+      f77: /opt/aurora/24.086.0/spack/gcc/0.7.0/install/linux-sles15-x86_64/gcc-7.5.0/gcc-12.2.0-fxd4zwa64mfswv34rol52zamj7c6r3cz/bin/gfortran
+      fc: /opt/aurora/24.086.0/spack/gcc/0.7.0/install/linux-sles15-x86_64/gcc-7.5.0/gcc-12.2.0-fxd4zwa64mfswv34rol52zamj7c6r3cz/bin/gfortran
     flags: {}
     operating_system: sles15
     target: x86_64
     modules: []
     environment: {}
     extra_rpaths: []
-
-# These are adapted from /opt/aurora/24.086.0/spack/oneapi/0.7.0/config/compilers_0.7.0.yaml
 - compiler:
-    spec: "oneapi@2024.07.30.002 ~envmods"
+    spec: "oneapi@2024.04.15.002 ~envmods"
     paths:
-      cc: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym/compiler/2024.07.30.002/bin/icx
-      cxx: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym/compiler/2024.07.30.002/bin/icpx
-      f77: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym/compiler/2024.07.30.002/bin/ifx
-      fc: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym/compiler/2024.07.30.002/bin/ifx
+      cc: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym/compiler/2024.04.15.002/bin/icx
+      cxx: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym/compiler/2024.04.15.002/bin/icpx
+      f77: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym/compiler/2024.04.15.002/bin/ifx
+      fc: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym/compiler/2024.04.15.002/bin/ifx
     flags:
       cflags: -fp-model=precise
       cxxflags: -fp-model=precise
@@ -29,17 +27,17 @@ compilers:
     operating_system: sles15
     target: x86_64
     modules:
-      - oneapi/eng-compiler/2024.07.30.002
+      - oneapi/eng-compiler/2024.04.15.002
       - gcc/12.2.0
     environment: {}
-    extra_rpaths: []
+    extra_rpaths: [] 
 - compiler:
-    spec: "oneapi@2024.2.1 ~envmods"
+    spec: "oneapi@2024.1 ~envmods"
     paths:
-      cc: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym/compiler/2024.2.1/bin/icx
-      cxx: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym/compiler/2024.2.1/bin/icpx
-      f77: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym/compiler/2024.2.1/bin/ifx
-      fc: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym/compiler/2024.2.1/bin/ifx
+      cc: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym/compiler/2024.1/bin/icx
+      cxx: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym/compiler/2024.1/bin/icpx
+      f77: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym/compiler/2024.1/bin/ifx
+      fc: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym/compiler/2024.1/bin/ifx
     flags:
       cflags: -fp-model=precise
       cxxflags: -fp-model=precise
@@ -47,7 +45,7 @@ compilers:
     operating_system: sles15
     target: x86_64
     modules:
-      - oneapi/release/2024.2.1
+      - oneapi/release/2024.1
       - gcc/12.2.0
     environment: {}
-    extra_rpaths: []
+    extra_rpaths: [] 
