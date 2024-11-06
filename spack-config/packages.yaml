@@ -5,16 +5,25 @@ packages:
         modules:
           - cmake/3.27.9
 
-  # Imported from /opt/aurora/24.180.0/spack/unified/0.8.0/config/spack-pe-0.8.0-2024.07.30.002_packages.yaml
+  # Imported from /opt/aurora/24.086.0/spack/oneapi/0.7.0/config/spack-pe-oneapi-0.7.0-2024.1_packages.yaml
   kokkos:
     externals:
-    - spec: kokkos@4.4.00 %oneapi@=2024.07.30.002 ~aggressive_vectorization~compiler_warnings~cuda~debug~debug_bounds_check~debug_dualview_modify_check~deprecated_code~examples~hpx~hpx_async_dispatch~hwloc~memkind~numactl+openmp~openmptarget~pic~rocm+serial+shared+sycl~tests~threads~tuning~wrapper
+    - spec: kokkos@git.7ff87a5b25af620c71ac13275f4875845334687c=develop %oneapi@=2024.1
+        ~aggressive_vectorization~compiler_warnings~cuda~debug~debug_bounds_check~debug_dualview_modify_check~deprecated_code~examples~hpx~hpx_async_dispatch~hwloc~memkind~numactl+openmp~openmptarget~pic~rocm+serial+shared+sycl~tests~threads~tuning~wrapper
         build_type=Release cxxstd=17 generator=make intel_gpu_arch=intel_pvc
-      prefix: /opt/aurora/24.180.0/spack/unified/0.8.0/install/linux-sles15-x86_64/oneapi-2024.07.30.002/kokkos-4.4.00-usx354ncdtlrwaypdqd2wlug65ugweqt
+      prefix: /opt/aurora/24.086.0/spack/oneapi/0.7.0/install/2024.1/linux-sles15-x86_64/oneapi-2024.1/kokkos-git.7ff87a5b25af620c71ac13275f4875845334687c_develop-gi7x6ttlirfj42zsv27p5qet6ll75phd
+      modules:
+      - kokkos/git.7ff87a5-omp-sycl
+    - spec: kokkos@git.7ff87a5b25af620c71ac13275f4875845334687c=develop %oneapi@=2024.1
+        ~aggressive_vectorization~compiler_warnings~cuda~debug~debug_bounds_check~debug_dualview_modify_check~deprecated_code~examples~hpx~hpx_async_dispatch~hwloc~memkind~numactl+openmp~openmptarget~pic~rocm+serial+shared~sycl~tests~threads~tuning~wrapper
+        build_type=Release cxxstd=17 generator=make intel_gpu_arch=none
+      prefix: /opt/aurora/24.086.0/spack/oneapi/0.7.0/install/2024.1/linux-sles15-x86_64/oneapi-2024.1/kokkos-git.7ff87a5b25af620c71ac13275f4875845334687c_develop-ugx4s3u7kwhz2wkyairsddbnajzjfzwt
+      modules:
+      - kokkos/git.7ff87a5-omp-ugx4s3u
     buildable: false
 
   ### Spack package config for Aurora SDK
-  # Taken from /opt/aurora/24.180.0/spack/unified/0.8.0/config/external_packages_0.8.0.yaml
+  # Imported from /opt/aurora/24.086.0/spack/oneapi/0.7.0/config/external_packages_0.7.0.yaml
   all:
     compiler: [oneapi]
     target: [x86_64]
@@ -27,197 +36,214 @@ packages:
   ocl-icd:
     externals:
     - spec: "ocl-icd@master-2022.05.18"
-      prefix: /opt/aurora/24.180.0/support/libraries/khronos/loader/master-2022.05.18
+      prefix: /opt/aurora/24.086.0/support/libraries/khronos/loader/master-2022.05.18
     buildable: false
 
   opencl-c-headers:
     externals:
     - spec: "opencl-c-headers@master-2022.05.18"
-      prefix: /opt/aurora/24.180.0/support/libraries/khronos/headers/master-2022.05.18
+      prefix: /opt/aurora/24.086.0/support/libraries/khronos/headers/master-2022.05.18
     buildable: false
 
   opencl-clhpp:
     externals:
     - spec: "opencl-clhpp@master-2022.05.18"
-      prefix: /opt/aurora/24.180.0/support/libraries/khronos/headers/master-2022.05.18
+      prefix: /opt/aurora/24.086.0/support/libraries/khronos/headers/master-2022.05.18
     buildable: false
 
   gdb:
     externals:
-      - spec: gdb@2024.07.30.002 %oneapi@2024.07.30.002
-        prefix: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym/debugger/2024.07.30.002
-      - spec: gdb@2024.2.1 %oneapi@2024.2.1
-        prefix: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym/debugger/2024.2.1
-    buildable: true
+      - spec: gdb@2024.04.15.002 %oneapi@2024.04.15.002
+        prefix: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym/debugger/2024.04.15.002
+      - spec: gdb@2024.1 %oneapi@2024.1
+        prefix: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym/debugger/2024.1
+    buildable: false
 
   intel-oneapi-mkl:
     externals:
-      - spec: intel-oneapi-mkl@2024.07.30.002 +cluster ~envmods mpi_family=mpich %oneapi@2024.07.30.002
-        prefix: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym
+      - spec: intel-oneapi-mkl@2024.04.15.002 +cluster ~envmods mpi_family=mpich %oneapi@2024.04.15.002
+        prefix: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym
         modules:
-          - oneapi/eng-compiler/2024.07.30.002
+          - oneapi/eng-compiler/2024.04.15.002
           - gcc/12.2.0
-      - spec: intel-oneapi-mkl@2024.2.1 +cluster ~envmods mpi_family=mpich %oneapi@2024.2.1
-        prefix: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym
+      - spec: intel-oneapi-mkl@2024.1 +cluster ~envmods mpi_family=mpich %oneapi@2024.1
+        prefix: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym
         modules:
-          - oneapi/release/2024.2.1
+          - oneapi/release/2024.1
           - gcc/12.2.0
     buildable: false
 
-  intel-oneapi-runtime:
+  intel-oneapi-compilers:
     externals:
-      - spec: intel-oneapi-runtime@2024.07.30.002 %oneapi@2024.07.30.002
-        prefix: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym/compiler/2024.07.30.002/lib
+      - spec: intel-oneapi-compilers@2024.04.15.002 ~envmods %gcc@12.2.0
+        prefix: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym
         modules:
-          - oneapi/eng-compiler/2024.07.30.002
+          - oneapi/eng-compiler/2024.04.15.002
           - gcc/12.2.0
-      - spec: intel-oneapi-runtime@2024.2.1 %oneapi@2024.2.1
-        prefix: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym/compiler/2024.2.1/lib
+      - spec: intel-oneapi-compilers@2024.1 ~envmods %gcc@12.2.0
+        prefix: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym
         modules:
-          - oneapi/release/2024.2.1
+          - oneapi/release/2024.1
           - gcc/12.2.0
+    buildable: false
+
   intel-oneapi-advisor:
     externals:
-      - spec: intel-oneapi-advisor@2024.07.30.002 ~envmods %oneapi@2024.07.30.002
-        prefix: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym
+      - spec: intel-oneapi-advisor@2024.04.15.002 ~envmods %oneapi@2024.04.15.002
+        prefix: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym
         modules:
-          - oneapi/eng-compiler/2024.07.30.002
+          - oneapi/eng-compiler/2024.04.15.002
           - gcc/12.2.0
-      - spec: intel-oneapi-advisor@2024.2.1 ~envmods %oneapi@2024.2.1
-        prefix: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym
+      - spec: intel-oneapi-advisor@2024.1 ~envmods %oneapi@2024.1
+        prefix: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym
         modules:
-          - oneapi/release/2024.2.1
+          - oneapi/release/2024.1
           - gcc/12.2.0
     buildable: false
 
   intel-oneapi-ccl:
     externals:
-      - spec: intel-oneapi-ccl@2024.07.30.002 ~envmods %oneapi@2024.07.30.002
-        prefix: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym
+      - spec: intel-oneapi-ccl@2024.04.15.002 ~envmods %oneapi@2024.04.15.002
+        prefix: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym
         modules:
-          - oneapi/eng-compiler/2024.07.30.002
+          - oneapi/eng-compiler/2024.04.15.002
           - gcc/12.2.0
-      - spec: intel-oneapi-ccl@2024.2.1 ~envmods %oneapi@2024.2.1
-        prefix: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym
+      - spec: intel-oneapi-ccl@2024.1 ~envmods %oneapi@2024.1
+        prefix: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym
         modules:
-          - oneapi/release/2024.2.1
+          - oneapi/release/2024.1
           - gcc/12.2.0
     buildable: false
 
   intel-oneapi-dal:
     externals:
-      - spec: intel-oneapi-dal@2024.07.30.002 ~envmods %oneapi@2024.07.30.002
-        prefix: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym
+      - spec: intel-oneapi-dal@2024.04.15.002 ~envmods %oneapi@2024.04.15.002
+        prefix: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym
         modules:
-          - oneapi/eng-compiler/2024.07.30.002
+          - oneapi/eng-compiler/2024.04.15.002
           - gcc/12.2.0
-      - spec: intel-oneapi-dal@2024.2.1 ~envmods %oneapi@2024.2.1
-        prefix: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym
+      - spec: intel-oneapi-dal@2024.1 ~envmods %oneapi@2024.1
+        prefix: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym
         modules:
-          - oneapi/release/2024.2.1
+          - oneapi/release/2024.1
           - gcc/12.2.0
     buildable: false
 
   intel-oneapi-dnn:
     externals:
-      - spec: intel-oneapi-dnn@2024.07.30.002 ~envmods %oneapi@2024.07.30.002
-        prefix: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym
+      - spec: intel-oneapi-dnn@2024.04.15.002 ~envmods %oneapi@2024.04.15.002
+        prefix: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym
         modules:
-          - oneapi/eng-compiler/2024.07.30.002
+          - oneapi/eng-compiler/2024.04.15.002
           - gcc/12.2.0
-      - spec: intel-oneapi-dnn@2024.2.1 ~envmods %oneapi@2024.2.1
-        prefix: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym
+      - spec: intel-oneapi-dnn@2024.1 ~envmods %oneapi@2024.1
+        prefix: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym
         modules:
-          - oneapi/release/2024.2.1
+          - oneapi/release/2024.1
           - gcc/12.2.0
     buildable: false
 
   intel-oneapi-dpct:
     externals:
-      - spec: intel-oneapi-dpct@2024.07.30.002 ~envmods %oneapi@2024.07.30.002
-        prefix: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym
+      - spec: intel-oneapi-dpct@2024.04.15.002 ~envmods %oneapi@2024.04.15.002
+        prefix: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym
         modules:
-          - oneapi/eng-compiler/2024.07.30.002
+          - oneapi/eng-compiler/2024.04.15.002
           - gcc/12.2.0
-      - spec: intel-oneapi-dpct@2024.2.1 ~envmods %oneapi@2024.2.1
-        prefix: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym
+      - spec: intel-oneapi-dpct@2024.1 ~envmods %oneapi@2024.1
+        prefix: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym
         modules:
-          - oneapi/release/2024.2.1
+          - oneapi/release/2024.1
           - gcc/12.2.0
     buildable: false
 
   intel-oneapi-dpl:
     externals:
-      - spec: intel-oneapi-dpl@2024.07.30.002 ~envmods %oneapi@2024.07.30.002
-        prefix: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym
+      - spec: intel-oneapi-dpl@2024.04.15.002 ~envmods %oneapi@2024.04.15.002
+        prefix: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym
         modules:
-          - oneapi/eng-compiler/2024.07.30.002
+          - oneapi/eng-compiler/2024.04.15.002
           - gcc/12.2.0
-      - spec: intel-oneapi-dpl@2024.2.1 ~envmods %oneapi@2024.2.1
-        prefix: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym
+      - spec: intel-oneapi-dpl@2024.1 ~envmods %oneapi@2024.1
+        prefix: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym
         modules:
-          - oneapi/release/2024.2.1
+          - oneapi/release/2024.1
           - gcc/12.2.0
     buildable: false
 
   intel-oneapi-tbb:
     externals:
-      - spec: intel-oneapi-tbb@2024.07.30.002 ~envmods %oneapi@2024.07.30.002
-        prefix: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym
+      - spec: intel-oneapi-tbb@2024.04.15.002 ~envmods %oneapi@2024.04.15.002
+        prefix: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym
         modules:
-          - oneapi/eng-compiler/2024.07.30.002
+          - oneapi/eng-compiler/2024.04.15.002
           - gcc/12.2.0
-      - spec: intel-oneapi-tbb@2024.2.1 ~envmods %oneapi@2024.2.1
-        prefix: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym
+      - spec: intel-oneapi-tbb@2024.1 ~envmods %oneapi@2024.1
+        prefix: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym
         modules:
-          - oneapi/release/2024.2.1
+          - oneapi/release/2024.1
           - gcc/12.2.0
     buildable: false
 
   intel-oneapi-vtune:
     externals:
-      - spec: intel-oneapi-vtune@2024.07.30.002 ~envmods %oneapi@2024.07.30.002
-        prefix: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym
+      - spec: intel-oneapi-vtune@2024.04.15.002 ~envmods %oneapi@2024.04.15.002
+        prefix: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym
         modules:
-          - oneapi/eng-compiler/2024.07.30.002
+          - oneapi/eng-compiler/2024.04.15.002
           - gcc/12.2.0
-      - spec: intel-oneapi-vtune@2024.2.1 ~envmods %oneapi@2024.2.1
-        prefix: /opt/aurora/24.180.0/spack/unified/0.8.0/oneapi_sym
+      - spec: intel-oneapi-vtune@2024.1 ~envmods %oneapi@2024.1
+        prefix: /opt/aurora/24.086.0/spack/oneapi/0.7.0/oneapi_sym
         modules:
-          - oneapi/release/2024.2.1
+          - oneapi/release/2024.1
           - gcc/12.2.0
     buildable: false
 
   mpich:
+    require:
+      - spec: "@:20231026 %oneapi pmi=pmix ~hydra"
+        when: "%oneapi@2024.04.15.002"
+      - spec: "@:20231026 %oneapi pmi=pmix ~hydra"
+        when: "%oneapi@2024.1"
     externals:
-      - spec: "mpich@20240717 %oneapi pmi=pmix ~hydra"
-        prefix: /opt/aurora/24.180.0/CNDA/mpich/20240717/mpich-ofi-all-icc-default-pmix-gpu-drop20240717
+      - spec: "mpich@20231026 %oneapi pmi=pmix ~hydra"
+        prefix: /opt/aurora/24.086.0/CNDA/mpich/20231026/mpich-ofi-all-icc-default-pmix-gpu-drop20231026
         modules:
-          - mpich/icc-all-pmix-gpu/20240717
+          - mpich/icc-all-pmix-gpu/20231026
+    buildable: false
+
   oneapi-level-zero:
     require:
-      - spec: "@:950.13"
-        when: "%oneapi@2024.07.30.002"
-      - spec: "@:950.13"
-        when: "%oneapi@2024.2.1"
+      - spec: "@:821.36"
+        when: "%oneapi@2024.04.15.002"
+      - spec: "@:803.29"
+        when: "%oneapi@2024.1"
     externals:
-      - spec: "oneapi-level-zero@803.75"
-        prefix: /opt/aurora/24.180.0/intel-gpu-umd/803.75
+      - spec: "oneapi-level-zero@803.29"
+        prefix: /opt/aurora/24.086.0/intel-gpu-umd/803.29
         modules:
-          - intel_compute_runtime/release/803.75
-      - spec: "oneapi-level-zero@914.33"
-        prefix: /opt/aurora/24.180.0/intel-gpu-umd/914.33
+          - intel_compute_runtime/release/803.29
+      - spec: "oneapi-level-zero@803.45"
+        prefix: /opt/aurora/24.086.0/intel-gpu-umd/803.45
         modules:
-          - intel_compute_runtime/release/914.33
-      - spec: "oneapi-level-zero@950.13"
-        prefix: /opt/aurora/24.180.0/intel-gpu-umd/950.13
+          - intel_compute_runtime/release/803.45
+      - spec: "oneapi-level-zero@821.30"
+        prefix: /opt/aurora/24.086.0/intel-gpu-umd/821.30
         modules:
-          - intel_compute_runtime/release/950.13
+          - intel_compute_runtime/release/821.30
+      - spec: "oneapi-level-zero@821.35"
+        prefix: /opt/aurora/24.086.0/intel-gpu-umd/821.35
+        modules:
+          - intel_compute_runtime/release/821.35
+      - spec: "oneapi-level-zero@821.36"
+        prefix: /opt/aurora/24.086.0/intel-gpu-umd/821.36
+        modules:
+          - intel_compute_runtime/release/821.36
     buildable: false
 
   libfabric:
     externals:
-      - spec: libfabric@1.20.1
-        prefix: /opt/cray/libfabric/1.20.1
+      - spec: libfabric@1.15.2.0
+        prefix: /opt/cray/libfabric/1.15.2.0
     buildable: false
 
